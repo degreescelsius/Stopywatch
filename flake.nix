@@ -13,7 +13,7 @@
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         python313
-        python313Packages.pyqt5
+        python313Packages.pyqt6
       ];
     };
   };
