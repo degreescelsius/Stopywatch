@@ -1,3 +1,13 @@
+import subprocess
+import os
+import sys
+
+def install_packages(package):
+    if os.name == 'nt':
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    else:
+        subprocess.check_call([sys.executable, "-m", "pip3", "install", package, "--break-system-packages"])
+
 required_packages = ["pyqt5"]
 for package in required_packages:
     try:
@@ -6,5 +16,6 @@ for package in required_packages:
         print(f"installing required package {package}...")
         install_packages(package)
 
-from PyQt5 import uic
-from PyQ
+from PyQt6 import uic
+from PyQt6 import QApplication, QMainWindow
+from PyQt6.QtGui import QIcon
